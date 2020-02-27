@@ -107,20 +107,27 @@
 		const imagesBox = document.querySelector('#imagesBox');
 
 		search.addEventListener('click', getInput)
-		function getInput(){
-			let names = tags.value.split(',');
-			getUsers(names);
+		function getInput(){	
+			if(tags.value.length === 0){
+				alert("You haven't entered any username")
+			}else{
+				let names = tags.value.split(',');
+				getUsers(names);
+			}
 		}
 
 		async function getUsers(names) {
 		  let users = [];
+		  let output;
 		  imagesBox.innerHTML = "";
+
 		  names.forEach(name => {
 			let endpoint = `https://api.github.com/users/${name}`;
 		    let user = fetch(endpoint).then(
 		      response => {
 		        if (response.statusText != "OK") {
-		          return null;
+					alert(`${name} ${response.statusText.toLowerCase()}`)
+		          	return null;
 		        } else {  
 						let userdata =  response.json();
 						userdata.then(prop => {
@@ -133,16 +140,18 @@
 						return userdata;
 		        }
 		      },
-		      failResponse => {
+		      reject => {
+				alert(`Something went wrong. Check your network connection and try again`)
 		        return null;
 		      }
 		    );
-		    users.push(user);
+			users.push(user);
+			console.log("users", users)
 		  })
 
-		  let results = await Promise.all(users);
-		  console.log(results);
-		  return results;
+		  output = await Promise.all(users);
+		  console.log(output);
+		  return output;
 		}
 
 
