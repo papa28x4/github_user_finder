@@ -66,17 +66,35 @@
 			display: flex;
 			justify-content: center;
 			padding-top: 20px;
-			
 		}
-		div.search_input>div:nth-child(1){
+		
+		div.search_input>div{
 			margin-right: 10px;
-			
+		}
+		.bootstrap-tagsinput{
+			margin-left: 10px;
 		}
 		.bootstrap-tagsinput input {
 			display: flex;
 			flex-wrap: wrap;
 			margin-right: 10px;
 			min-height: 24px;
+		}
+		@media(max-width:440px){
+			#heading{
+				font-size: 30px;
+			}
+			div.search_input{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			div.search_input>div:nth-child(1){
+				margin-bottom: 10px;
+			}
+			.bootstrap-tagsinput{
+				margin-left: 10px;
+			}
 		}
 		
 	</style>
