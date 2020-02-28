@@ -30,7 +30,7 @@
 						userdata.then(prop => {
 								let figure = document.createElement('figure');
 								let html = `<img class="images" src="${prop.avatar_url}"  alt="${prop.login}">
-								<figCaption><b>${prop.name}</b><a href="${prop.html_url}" target="_blank"><button class="btn btn-success">View Profile</button></a></figcaption>`;
+								<figCaption><span><b>${prop.name}</b> (${prop.login})</span><a href="${prop.html_url}" target="_blank"><button class="btn btn-success">View Profile</button></a></figcaption>`;
 								figure.innerHTML = html;
 								imagesBox.insertAdjacentElement("beforeend", figure)
 							});
