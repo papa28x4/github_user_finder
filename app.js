@@ -43,7 +43,7 @@
 		      }
 		    );
 			users.push(user);
-			console.log("users", users)
+			
 		  })
 
 		  output = await Promise.all(users);
