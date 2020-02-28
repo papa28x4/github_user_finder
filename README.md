@@ -4,4 +4,4 @@ VGG Fetch Assignment: Create an async function that receives an array of Github 
 
 
 
-![alt text](https://i.ibb.co/Z1T8TtJ/github-user-finder.png "Sneek Preview")
+![alt text](https://i.ibb.co/F8dWRvm/github-finder.png "Sneek Preview")
